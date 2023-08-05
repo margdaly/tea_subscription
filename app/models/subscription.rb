@@ -10,8 +10,10 @@ class Subscription < ApplicationRecord
 
   enum frequency: ['weekly', 'monthly', 'seasonal']
 
-  def title
-    tea.title
+  before_create :set_title
+  
+  def set_title
+    self.title = tea.title
   end
 
   def price
