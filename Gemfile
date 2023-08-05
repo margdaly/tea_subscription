@@ -33,6 +33,7 @@ gem 'jsonapi-serializer'
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'net-http'
   gem 'rspec-rails', '~> 3.8'
   gem 'pry'
   gem 'shoulda-matchers'
