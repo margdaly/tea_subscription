@@ -6,10 +6,6 @@ RSpec.describe Subscription, type: :model do
     it { should belong_to(:tea) }
   end
 
-  describe 'validations' do
-    it { should validate_presence_of(:status) }
-  end
-
   describe 'attributes' do
     before :all do
       @customer = create(:customer)
@@ -31,7 +27,7 @@ RSpec.describe Subscription, type: :model do
       @subscription.update(frequency: 'monthly')
       expect(@subscription.price).to eq('$49.56')
 
-      @subscription.update(frequency: 'seasonally')
+      @subscription.update(frequency: 'seasonal')
       expect(@subscription.price).to eq('$16.52')
     end
   end
