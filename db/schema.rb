@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2023_08_05_221729) do
   create_table "subscriptions", force: :cascade do |t|
     t.string "title"
     t.string "price"
-    t.boolean "status"
+    t.boolean "status", default: true
     t.integer "frequency"
     t.bigint "customer_id"
     t.bigint "tea_id"
