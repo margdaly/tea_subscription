@@ -8,7 +8,6 @@ class Api::V0::SubscriptionsController < ApplicationController
   end
 
   def update
-    # require 'pry'; binding.pry
     subscription = Subscription.find_by!(update_params)
     subscription.update!(status: false)
     render json: SubscriptionSerializer.new(subscription), status: 200

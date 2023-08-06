@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe 'PATCH api/v0/cancel' do
   let(:customer) { create(:customer) }
   let(:tea) { create(:tea) }
-  let(:subscription) { create(:subscription, customer_id: customer.id, tea_id: tea.id, frequency: 'seasonal') }
+  let(:subscription) { Subscription.create!(customer_id: customer.id, tea_id: tea.id, frequency: 'seasonal') }
   let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
 
   describe 'canceling a subscription' do
     scenario 'happy path' do
       expect(subscription.status).to eq('active')
 
-      patch 'api/v0/cancel', headers: headers, params: JSON.generate({ customer_id: customer.id, tea_id: tea.id })
+      patch '/api/v0/cancel', headers: headers, params: JSON.generate({ customer_id: customer.id, tea_id: tea.id })
 
       updated_sub = JSON.parse(response.body, symbolize_names: true) 
 
@@ -32,7 +32,7 @@ RSpec.describe 'PATCH api/v0/cancel' do
     end
 
     scenario 'sad path' do
-      patch 'api/v0/cancel', headers: headers, params: JSON.generate({ customer_id: 0, tea_id: tea.id })
+      patch '/api/v0/cancel', headers: headers, params: JSON.generate({ customer_id: 0, tea_id: tea.id })
 
       failure = JSON.parse(response.body, symbolize_names: true)
 
@@ -43,7 +43,7 @@ RSpec.describe 'PATCH api/v0/cancel' do
       expect(failure[:errors][0]).to be_a(Hash)
       expect(failure[:errors][0][:status]).to eq('404')
       expect(failure[:errors][0][:title]).to eq('Record Invalid')
-      expect(failure[:errors][0][:detail]).to eq('Validation failed: Customer must exist')
+      expect(failure[:errors][0][:detail]).to eq("Couldn't find Subscription")
     end
   end
 end
