@@ -1,24 +1,21 @@
-# README
+<h1 align="center">
+ Tea Subscription API ☕
+</h1>  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center"
+    <a href="https://coveralls.io/github/badges/shields">
+        <img src="https://img.shields.io/badge/coverage-100%25-lawngreen"
+            alt="coverage"></a>
+</p>
 
-Things you may want to cover:
+## Project Goals 
+Create a Rails API for a Tea Subscription Service
+  - Easily consumed by a Frontend Developer
+  - Restful routes 
+  - Well-organized code, following OOP
+  - Test Driven Development 
 
-* Ruby version
+## Database Diagram
 
-* System dependencies
+##
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
