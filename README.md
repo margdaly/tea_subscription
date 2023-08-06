@@ -9,11 +9,16 @@
 </p>
 
 ## Project Goals 
-Create a Rails API for a Tea Subscription Service
+Create a REST API for a Tea Subscription Service
   - Easily consumed by a Frontend Developer
   - Restful routes 
   - Well-organized code, following OOP
   - Test Driven Development 
+
+Exposes three endpoints to manage tea subscriptions
+  - subscribe a customer to a tea subscription
+  - cancel a customer's tea subscription
+  - see all of a customer's subscriptions (active and cancelled)
 
 ## Database Diagram
 
