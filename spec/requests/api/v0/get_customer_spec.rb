@@ -49,7 +49,7 @@ RSpec.describe 'GET api/v0/customers/:id/' do
 
       sub2 = attributes[:subscriptions].last
       expect(sub2).to be_a(Hash)
-      expect(sub2[:id]).to be_an(Integer)
+      expect(sub2[:id]).to eq(subscription2.id)
       expect(sub2[:title]).to be_a(String)
       expect(sub2[:title]).to eq(subscription2.title)
       expect(sub2[:price]).to be_a(String)
