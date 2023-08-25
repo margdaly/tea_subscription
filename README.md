@@ -24,7 +24,19 @@ Exposes three endpoints to manage tea subscriptions
 * Ruby v 2.7.4
 * Rails v 5.2.8
 * PostgreSQL
-  
+
+## Getting Started
+1. Fork and Clone this repository locally
+2. Install gem packages
+`bundle install`
+4. Set up the database
+`rails db:{drop,create,migrate,seed}`
+4. Make sure all tests are passing by running
+`bundle exec rspec`
+5. Start up your local server by running
+`rails s`
+6. You can make the sample request for each endpoint by running the examples in [Postman](https://app.getpostman.com/run-collection/26085409-1cb627ef-d500-4f6f-b849-9b655205c7ed?action=collection%2Ffork&collection-url=entityId%3D26085409-1cb627ef-d500-4f6f-b849-9b655205c7ed%26entityType%3Dcollection%26workspaceId%3Df402ed1d-531c-4451-ad21-b6367689bff9).
+   
 ## Database Diagram
 ![Database Diagram](https://github.com/margdaly/tea_subscription/assets/121778028/21a2bcff-9bde-416d-ae8d-830b88f1580f)
 
@@ -233,22 +245,5 @@ status **404**
 }
 ```
 </details>
-
-
-## Getting Started
-1. Fork and Clone this repository locally
-2. Install gem packages
-`bundle install`
-4. Set up the database
-`rails db:{drop,create,migrate,seed}`
-4. Make sure all tests are passing by running
-`bundle exec rspec`
-5. Start up your local server by running
-`rails s`
-6. You can make the sample request for each endpoint by running the examples in [Postman](https://app.getpostman.com/run-collection/26085409-1cb627ef-d500-4f6f-b849-9b655205c7ed?action=collection%2Ffork&collection-url=entityId%3D26085409-1cb627ef-d500-4f6f-b849-9b655205c7ed%26entityType%3Dcollection%26workspaceId%3Df402ed1d-531c-4451-ad21-b6367689bff9).
-
-
-
-
 
 
